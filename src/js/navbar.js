@@ -55,26 +55,24 @@ export const setupNavbar = () => {
   })
 
   const sections = [...window.document.querySelectorAll('section')]
-  window.document.addEventListener('scroll', () =>
-    raf(() => {
-      sections.some(section => {
-        const isActive = isOnScreen(section)
-        if (isActive) {
-          const currentLink = header.querySelector(
-            'nav ul.nav-list li a.active'
-          )
-          const nextLink = header.querySelector(
-            `nav ul.nav-list li a[href="#${section.id}"]`
-          )
-          if (currentLink) {
-            currentLink.classList.remove('active')
-          }
-          if (nextLink) {
-            nextLink.classList.add('active')
-          }
+  const setTabActive = () => {
+    sections.some(section => {
+      const isActive = isOnScreen(section)
+      if (isActive) {
+        const currentLink = header.querySelector('nav ul.nav-list li a.active')
+        const nextLink = header.querySelector(
+          `nav ul.nav-list li a[href="#${section.id}"]`
+        )
+        if (currentLink) {
+          currentLink.classList.remove('active')
         }
-        return isActive
-      })
+        if (nextLink) {
+          nextLink.classList.add('active')
+        }
+      }
+      return isActive
     })
-  )
+  }
+  window.document.addEventListener('scroll', () => raf(setTabActive))
+  setTabActive()
 }
