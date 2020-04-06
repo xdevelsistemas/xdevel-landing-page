@@ -1,0 +1,274 @@
+@import "variables";
+@import "global";
+@import "navbar";
+@import "form";
+@import "footer";
+@import "icons";
+
+$horizontal-padding: 5%;
+
+.text-center {
+  text-align: center;
+}
+
+h1 {
+  font-size: 2.5rem;
+  font-weight: 700;
+}
+
+h2 {
+  font-size: 2rem;
+  font-weight: 500;
+
+  &.pipeline {
+    text-align: center;
+    overflow: hidden;
+    font-size: 2rem;
+    font-weight: bold;
+    padding: 20px 0;
+    font-family: "Open Sans";
+    text-transform: uppercase;
+
+    span {
+      position: relative;
+      display: inline-block;
+      line-height: 1;
+      margin-bottom: 15px;
+
+      &:before,
+      &:after {
+        content: "";
+        position: absolute;
+        top: 50%;
+        height: 1px;
+        background: $TEXT_COLOR;
+        width: 99999px;
+      }
+
+      &:before {
+        left: 100%;
+        margin-left: 20px;
+      }
+
+      &:after {
+        right: 100%;
+        margin-right: 20px;
+      }
+    }
+  }
+}
+
+h3 {
+  font-size: 1.3rem;
+  font-weight: 500;
+  text-transform: uppercase;
+}
+
+.full-body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  img.logo-small {
+    width: 150px;
+    margin: 30px 0;
+  }
+}
+
+section.inverse {
+  .pipeline {
+    span {
+      &:before,
+      &:after {
+        background: $BG_COLOR_PRIMARY;
+      }
+    }
+  }
+}
+
+.only-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  font-size: 2rem;
+  text-align: center;
+  text-transform: uppercase;
+  font-weight: 300;
+
+  img {
+    width: 100%;
+    max-width: 700px;
+    margin: 30px;
+  }
+
+  a {
+    font-size: 1rem;
+    text-decoration: none;
+    padding-top: 30px;
+  }
+}
+
+section {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  padding: 0 $horizontal-padding;
+
+  &.start {
+    align-items: flex-start;
+  }
+
+  & + & {
+    padding-top: 35px;
+  }
+
+  &.inverse {
+    background-color: $BG_COLOR_INVERSE;
+    color: $TEXT_COLOR_INVERSE;
+  }
+
+  .col {
+    width: 50%;
+
+    &.img {
+      text-align: center;
+    }
+  }
+
+  .full {
+    width: 100%;
+  }
+  img.featured {
+    width: 100%;
+    margin-bottom: 30px;
+    max-width: 700px;
+  }
+  .content {
+    &.right {
+      padding-left: 30px;
+    }
+    &.left {
+      padding-right: 30px;
+    }
+    p {
+      font-size: 1.3rem;
+      font-family: Roboto, Arial;
+      font-weight: 300;
+      line-height: 1.7rem;
+      // text-align: justify;
+
+      &:last-child {
+        padding-bottom: 15px;
+      }
+    }
+
+    p + p {
+      margin-top: 15px;
+    }
+
+    &.count-container {
+      display: flex;
+    }
+
+    .count {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      margin: 20px auto;
+      text-align: center;
+      transition: display ease 0.5s;
+
+      &.hide {
+        display: none;
+      }
+
+      .icon-box {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 80px;
+        height: 80px;
+        margin: 10px auto;
+        border: 1px solid $BG_COLOR_INVERSE;
+        transform: rotate(45deg);
+        span {
+          display: flex;
+          text-align: center;
+          font-size: 2.5rem;
+          transform: rotate(-45deg);
+        }
+      }
+
+      p {
+        text-transform: uppercase;
+      }
+
+      p.counter {
+        margin-top: 20px;
+        font-size: 2.5rem;
+        font-weight: 500;
+      }
+    }
+  }
+
+  h2 + p {
+    margin-top: 20px;
+  }
+
+  .social-medias {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+    align-items: center;
+    margin: 60px 0;
+    a {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 4rem;
+      color: $TEXT_COLOR_INVERSE;
+      transition: color ease 0.3s;
+
+      &:hover {
+        color: darken($PRIMARY_COLOR, 10%);
+      }
+
+      & + a {
+        margin-left: 35px;
+      }
+    }
+
+    @media (max-width: 480px) {
+      a {
+        font-size: 2.5rem;
+      }
+    }
+  }
+
+  &#home {
+    min-height: 90vh;
+  }
+
+  @media (max-width: 992px) {
+    .col {
+      width: 100%;
+    }
+
+    .content {
+      &.right {
+        padding-left: 0;
+      }
+
+      &.count-container {
+        flex-direction: column;
+      }
+    }
+  }
+}

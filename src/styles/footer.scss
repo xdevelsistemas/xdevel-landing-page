@@ -1,0 +1,26 @@
+footer {
+  display: flex;
+  font-size: 0.9rem;
+  height: 50px;
+  color: $TEXT_COLOR_INVERSE;
+  background-color: darken($BG_COLOR_INVERSE, 10%);
+  align-items: center;
+  padding: 0 30px;
+  justify-content: space-between;
+  flex: 0 0 auto;
+
+  img.icon {
+    width: 15px;
+    vertical-align: text-top;
+  }
+
+  @media (max-width: 667px) {
+    flex-direction: column;
+    padding: 10px 30px;
+    flex: 1;
+
+    p + p {
+      margin-top: 10px;
+    }
+  }
+}

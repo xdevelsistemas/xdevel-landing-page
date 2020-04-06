@@ -1,0 +1,74 @@
+form {
+  display: flex;
+  flex-direction: column;
+  margin: 0 0 50px 0;
+  width: 100%;
+  max-width: 650px;
+  .group {
+    display: flex;
+    flex-direction: column;
+    label {
+      margin-bottom: 5px;
+    }
+    input {
+      margin-top: 5px;
+    }
+
+    .alert {
+      padding-top: 3px;
+      font-size: 0.8rem;
+    }
+
+    &.bad {
+      label,
+      .alert {
+        color: $DANGER_COLOR;
+      }
+      input,
+      textarea {
+        border: 1px solid $DANGER_COLOR;
+      }
+    }
+  }
+  .group + .group {
+    padding-top: 15px;
+  }
+  input,
+  button,
+  textarea {
+    font: 400 18px Roboto, sans-serif;
+  }
+  input,
+  textarea {
+    background-color: #fefefe;
+    border: 0;
+    margin: 0;
+    padding: 15px;
+    color: $TEXT_COLOR;
+    border: 1px solid #dcdce6;
+  }
+  input {
+    width: 100%;
+  }
+  button[type="submit"] {
+    color: #1c1c1c;
+    margin-top: 15px;
+    padding: 15px;
+
+    width: 100%;
+    max-width: 150px;
+    font-size: 1.2rem;
+    font-weight: 300;
+    text-transform: uppercase;
+    background-color: $SUCCESS_COLOR;
+    border: 0;
+    cursor: pointer;
+    -webkit-transition: all 0.3s;
+    transition: all 0.3s;
+
+    &:hover {
+      background-color: darken($SUCCESS_COLOR, 10%);
+      color: rgb(0, 0, 0);
+    }
+  }
+}
