@@ -40,6 +40,7 @@ export const setupNavbar = () => {
       const targetId = e.target.getAttribute('href').substr(1)
       const to = window.document.getElementById(targetId).offsetTop - 70
       scrollTo(to, 400)
+      window.location.hash = targetId
     })
   })
 
@@ -50,6 +51,7 @@ export const setupNavbar = () => {
     }
     e.preventDefault()
     scrollTo(0, 400)
+    window.location.hash = ''
   })
 
   const sections = [...window.document.querySelectorAll('section')]
