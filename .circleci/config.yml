@@ -1,0 +1,64 @@
+jobs:
+  build:
+    working_directory: ~/app
+    executor:
+      name: node/default
+      tag: '12'
+    steps:
+      - run: sudo apt-get update
+      - run: sudo apt-get install -y tzdata
+      - run: sudo ln -fs /usr/share/zoneinfo/America/Sao_Paulo /etc/localtime
+      - checkout
+      - restore_cache:
+          key: dependency-cache-{{ checksum "yarn.lock" }}
+      - run:
+          name: NodeJS version
+          command: node -v
+      - run:
+          name: Yarn version
+          command: yarn -v
+      - run: yarn
+      - save_cache:
+          key: dependency-cache-{{ checksum "yarn.lock" }}
+          paths:
+            - ./node_modules
+      - run:
+          name: All tests
+          command: yarn test:ci
+      - coveralls/upload
+      - store_test_results:
+          path: tests-result
+      - run:
+          name: Build
+          command: yarn build
+      - persist_to_workspace:
+          root: ~/app
+          paths:
+            - dist
+  deploy:
+    executor: aws-cli/default
+    working_directory: ~/app
+    steps:
+      - attach_workspace:
+          at: ~/app/
+      - run:
+          name: AWS version
+          command: aws --version
+      - run:
+          name: Deploy to S3 files
+          command: |
+            cd dist
+            aws s3 sync --delete . s3://$AWS_S3_BUCKET
+      - run:
+          name: CDN Invalidation
+          command: aws cloudfront create-invalidation --distribution-id $CDN_DISTRIBUTION_ID --paths "/*"
+
+orbs:
+  node: circleci/node@2.0.1
+  coveralls: coveralls/coveralls@1.0.4
+  aws-cli: circleci/aws-cli@1.0.0
+version: 2.1
+workflows:
+  build-and-deploy:
+    jobs:
+      - build
