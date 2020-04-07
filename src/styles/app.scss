@@ -1,9 +1,9 @@
-@import "variables";
-@import "global";
-@import "navbar";
-@import "form";
-@import "footer";
-@import "icons";
+@import 'variables';
+@import 'global';
+@import 'navbar';
+@import 'form';
+@import 'footer';
+@import 'icons';
 
 $horizontal-padding: 5%;
 
@@ -26,7 +26,7 @@ h2 {
     font-size: 2rem;
     font-weight: bold;
     padding: 20px 0;
-    font-family: "Open Sans";
+    font-family: 'Open Sans';
     text-transform: uppercase;
 
     span {
@@ -37,7 +37,7 @@ h2 {
 
       &:before,
       &:after {
-        content: "";
+        content: '';
         position: absolute;
         top: 50%;
         height: 1px;
@@ -117,6 +117,7 @@ section {
   align-items: center;
   flex-wrap: wrap;
   padding: 0 $horizontal-padding;
+  min-height: 90vh;
 
   &.start {
     align-items: flex-start;
@@ -227,12 +228,12 @@ section {
     align-items: center;
     justify-content: center;
     align-items: center;
-    margin: 60px 0;
+    margin: 0 0 15px 0;
     a {
       display: flex;
       align-items: center;
       justify-content: center;
-      font-size: 4rem;
+      font-size: 3rem;
       color: $TEXT_COLOR_INVERSE;
       transition: color ease 0.3s;
 
@@ -252,8 +253,13 @@ section {
     }
   }
 
-  &#home {
-    min-height: 90vh;
+  &#about {
+    flex-direction: row;
+    align-items: flex-start;
+    .col {
+      width: 50%;
+      justify-content: space-around;
+    }
   }
 
   @media (max-width: 992px) {
