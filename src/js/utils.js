@@ -1,5 +1,10 @@
-export const scrollTo = (to, duration) => {
-  const element = document.scrollingElement || document.documentElement
+/**
+ * Scroll to element
+ * @param {Window} window
+ * @returns {(to: HTMLElement, duration: number) => void}
+ */
+export const scrollToFactory = window => (to, duration) => {
+  const element = window.document.scrollingElement || window.document.documentElement
   const start = element.scrollTop
   const change = to - start
   const startDate = +new Date()
@@ -25,7 +30,7 @@ export const scrollTo = (to, duration) => {
       easeInOutQuad(currentTime, start, change, duration)
     )
     if (currentTime < duration) {
-      requestAnimationFrame(animateScroll)
+      window.requestAnimationFrame(animateScroll)
     } else {
       element.scrollTop = to
     }
@@ -33,7 +38,12 @@ export const scrollTo = (to, duration) => {
   animateScroll()
 }
 
-export const isOnScreen = el => {
+/**
+ * elemnt is on screen
+ * @param {Window} window global dom object
+ * @returns {(el: HTMLElement) => void}
+ */
+export const isOnScreenFactory = window => el => {
   const headerSize = 100
   const scroll = window.scrollY || window.pageYOffset
   const boundsTop = el.getBoundingClientRect().top + scroll
@@ -54,7 +64,12 @@ export const isOnScreen = el => {
   )
 }
 
-export const counter = show => {
+/**
+ * Counter animation in element
+ * @param {Window} window global dom object
+ * @returns {(show: HTMLElement) => void}
+ */
+export const counterFactory = window => show => {
   const getFormatedNumber = n => {
     const number = window.Intl.NumberFormat('pt-Br', {
       style: 'decimal',

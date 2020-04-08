@@ -25,6 +25,7 @@ jspm_packages/
 
 # testing
 /coverage
+.nyc_output
 
 # production
 /build

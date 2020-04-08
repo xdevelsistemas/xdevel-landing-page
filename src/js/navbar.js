@@ -1,4 +1,7 @@
-import { isOnScreen, scrollTo } from './utils'
+import { isOnScreenFactory, scrollToFactory } from './utils'
+
+const isOnScreen = isOnScreenFactory(window)
+const scrollTo = scrollToFactory(window)
 
 // requestAnimationFrame
 const raf =

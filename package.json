@@ -7,13 +7,16 @@
     "start": "webpack-dashboard -- webpack-dev-server --open --config=config/webpack.dev.js",
     "build": "webpack --config=config/webpack.prod.js",
     "format": "prettier --write src/**/*.js",
-    "lint": "eslint -c .eslintrc.js --fix src/**/*.js"
+    "lint": "eslint -c .eslintrc.js --fix src/**/*.js",
+    "test:server": "node __tests__/setup-test.js",
+    "test": "jest --detectOpenHandles --forceExit"
   },
   "devDependencies": {
     "@babel/core": "^7.9.0",
-    "@babel/preset-env": "^7.9.0",
+    "@babel/preset-env": "^7.9.5",
     "@commitlint/cli": "^8.3.5",
     "@commitlint/config-conventional": "^8.3.4",
+    "babel-jest": "^25.2.6",
     "babel-loader": "^8.1.0",
     "clean-webpack-plugin": "^3.0.0",
     "css-loader": "^3.4.2",
@@ -22,19 +25,26 @@
     "eslint-plugin-import": "^2.20.2",
     "eslint-plugin-node": "^11.1.0",
     "eslint-plugin-promise": "^4.2.1",
+    "express": "^4.17.1",
+    "faker": "^4.1.0",
     "file-loader": "^6.0.0",
     "html-loader": "^1.0.0",
     "html-webpack-plugin": "^4.0.4",
     "htmlhint": "^0.11.0",
     "husky": "^4.2.3",
+    "jest": "^25.2.7",
+    "jest-cli": "^25.2.7",
+    "jest-puppeteer": "^4.4.0",
     "lint-staged": "^10.1.2",
     "node-sass": "^4.13.1",
-    "prettier": "^2.0.4",
+    "prettier-eslint": "^9.0.1",
+    "puppeteer": "^2.1.1",
     "sass-loader": "^8.0.2",
     "style-loader": "^1.1.3",
     "webpack": "^4.42.1",
     "webpack-cli": "^3.3.11",
     "webpack-dashboard": "^3.2.0",
+    "webpack-dev-middleware": "^3.7.2",
     "webpack-dev-server": "^3.10.3"
   },
   "dependencies": {
@@ -61,5 +71,15 @@
       "commit-msg": "commitlint -E HUSKY_GIT_PARAMS",
       "pre-commit": "lint-staged"
     }
+  },
+  "jest": {
+    "preset": "jest-puppeteer",
+    "globals": {
+      "PATH": "http://localhost:4444"
+    },
+    "testMatch": [
+      "**/__tests__/**/*.(test|spec).js",
+      "**/*.(test|spec).js"
+    ]
   }
 }

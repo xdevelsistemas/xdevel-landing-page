@@ -2,8 +2,10 @@ import 'core-js/features/array/for-each'
 import 'core-js/features/array/some'
 import { setupContactForm } from './js/contact-form'
 import { setupNavbar } from './js/navbar'
-import { counter } from './js/utils'
+import { counterFactory } from './js/utils'
 import './styles/app.scss'
+
+const counter = counterFactory(window)
 
 const removeLoading = () => {
   window.document.getElementById('loader').style.display = 'none'
