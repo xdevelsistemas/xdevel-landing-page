@@ -1,3 +1,4 @@
+import constants from './constants'
 import { isOnScreenFactory, scrollToFactory } from './utils'
 
 const isOnScreen = isOnScreenFactory(window)
@@ -25,8 +26,8 @@ export const setupNavbar = () => {
    */
   if (toggle) {
     toggle.addEventListener('click', () => {
-      toggle.classList.toggle('active')
-      window.document.querySelector('nav ul').classList.toggle('active')
+      toggle.classList.toggle(constants.classes.active)
+      window.document.querySelector('nav ul').classList.toggle(constants.classes.active)
     })
   }
 
@@ -37,8 +38,8 @@ export const setupNavbar = () => {
     link.addEventListener('click', e => {
       e.preventDefault()
 
-      toggle.classList.remove('active')
-      window.document.querySelector('nav ul').classList.remove('active')
+      toggle.classList.remove(constants.classes.active)
+      window.document.querySelector('nav ul').classList.remove(constants.classes.active)
 
       const targetId = e.target.getAttribute('href').substr(1)
       const to = window.document.getElementById(targetId).offsetTop - 70
@@ -62,15 +63,15 @@ export const setupNavbar = () => {
     sections.some(section => {
       const isActive = isOnScreen(section)
       if (isActive) {
-        const currentLink = header.querySelector('nav ul.nav-list li a.active')
+        const currentLink = header.querySelector(`nav ul.nav-list li a.${constants.classes.active}`)
         const nextLink = header.querySelector(
           `nav ul.nav-list li a[href="#${section.id}"]`
         )
         if (currentLink) {
-          currentLink.classList.remove('active')
+          currentLink.classList.remove(constants.classes.active)
         }
         if (nextLink) {
-          nextLink.classList.add('active')
+          nextLink.classList.add(constants.classes.active)
         }
       }
       return isActive

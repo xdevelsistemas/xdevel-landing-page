@@ -1,3 +1,4 @@
+import constants from './js/constants'
 import { setupContactForm } from './js/contact-form'
 import { setupNavbar } from './js/navbar'
 import { counterFactory } from './js/utils'
@@ -27,7 +28,7 @@ window.addEventListener('load', () => {
     .forEach(count => counter(count))
 
   if (process.env.NODE_ENV === 'production') {
-    setTimeout(console.log.bind(console, '%cxDevel', 'font-family: Roboto, sans-serif;color: #2ca242ff;font-size: 5rem;'), 0)
-    setTimeout(console.log.bind(console, '%cÉ um prazer tê-lo(a) conosco!', 'font-family: Roboto, sans-serif;color: #3bb273;font-size: 1.2rem;'), 20)
+    setTimeout(console.log.bind(console, `%c${constants.brand}`, 'font-family: Roboto, sans-serif;color: #2ca242ff;font-size: 5rem;'), 0)
+    setTimeout(console.log.bind(console, `%c${constants.messages.welcome}`, 'font-family: Roboto, sans-serif;color: #3bb273;font-size: 1.2rem;'), 20)
   }
 })

@@ -1,5 +1,7 @@
 import FormValidator from '@yaireo/validator'
-import { createAlertFactory } from './alert'
+import { createAlertFactory, EAlertTypes } from './alert'
+import { isTesting } from './config'
+import constants from './constants'
 
 const createAlert = createAlertFactory(window)
 const form = window.document.querySelector('section#contact form')
@@ -7,9 +9,9 @@ const form = window.document.querySelector('section#contact form')
 const validator = new FormValidator(
   {
     texts: {
-      empty: 'Campo obrigatório!',
-      email: 'E-mail inválido!',
-      complete: 'É preciso escrever um pouco mais!'
+      empty: constants.formValidations.required,
+      email: constants.formValidations.email,
+      complete: constants.formValidations.complete
     },
     events: ['blur', 'input', 'change']
   },
@@ -22,7 +24,7 @@ const validator = new FormValidator(
  * @returns {Promise<void>}
  */
 const request = data => new Promise((resolve, reject) => {
-  const url = process.env.NODE_ENV === 'test' ? '/contact-submit' : 'https://formspree.io/xrgakypw'
+  const url = isTesting ? constants.apiUrl.test : constants.apiUrl.default
   const xhr = new XMLHttpRequest()
   xhr.open('POST', url)
   xhr.setRequestHeader('Accept', 'application/json')
@@ -56,22 +58,22 @@ export const setupContactForm = () => {
         return
       }
       isLoading = true
-      button.classList.add('disabled')
-      window.document.getElementById('loader').style.display = ''
-      window.document.body.classList.add('loading')
+      button.classList.add(constants.classes.disabled)
+      window.document.getElementById(constants.elementIds.loader).style.display = ''
+      window.document.body.classList.add(constants.classes.loading)
       try {
         await request(new FormData(form))
-        const message = 'Obrigado por entrar em contato! Em breve enviaremos um retorno.'
-        createAlert(message, messagesContainer, 'success')
+        const message = constants.messages.successContact
+        createAlert(message, messagesContainer, EAlertTypes.success)
         form.reset()
       } catch (e) {
-        const message = 'Erro inesperado ao enviar, por favor entre em contato por email ou tente novamente mais tarde.'
-        createAlert(message, messagesContainer, 'error')
+        const message = constants.messages.errorContact
+        createAlert(message, messagesContainer, EAlertTypes.error)
       } finally {
         isLoading = false
-        button.classList.remove('disabled')
-        window.document.getElementById('loader').style.display = 'none'
-        window.document.body.classList.remove('loading')
+        button.classList.remove(constants.classes.disabled)
+        window.document.getElementById(constants.elementIds.loader).style.display = 'none'
+        window.document.body.classList.remove(constants.classes.loading)
       }
     })
   }

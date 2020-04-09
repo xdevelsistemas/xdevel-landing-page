@@ -28,3 +28,13 @@ export const createAlertFactory = window => (message, appendTo, type = 'default'
 
   return alertElement
 }
+
+/**
+ * All types of alert
+ * @enum EAlertTypes
+ */
+export const EAlertTypes = {
+  default: 'default',
+  success: 'success',
+  error: 'error'
+}
