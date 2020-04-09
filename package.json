@@ -11,7 +11,8 @@
     "lint": "eslint -c .eslintrc.js --fix src/**/*.js",
     "test:server": "node __tests__/setup-test.js",
     "test": "cross-env NODE_ENV=test jest --detectOpenHandles --forceExit",
-    "test:ci": "cross-env NODE_ENV=test jest --runInBand --forceExit"
+    "test:ci": "cross-env NODE_ENV=test jest --runInBand --forceExit",
+    "test:browser": "cross-env HEADLESS=false DEVTOOLS=true NODE_ENV=test jest --detectOpenHandles --forceExit"
   },
   "devDependencies": {
     "@babel/core": "^7.9.0",
