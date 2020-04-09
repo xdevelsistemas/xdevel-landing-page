@@ -32,7 +32,7 @@ module.exports = () => {
     expect(brand).toMatch('xDevel')
     const year = await (paragraphs[0]).evaluate(node => node.textContent.trim())
     expect(year).toMatch(`2012 - ${new Date().getFullYear()}`)
-    const made = await paragraphs[2].evaluate(node => node.textContent)
+    const made = await paragraphs[1].evaluate(node => node.textContent)
     expect(made).toMatch('Made with')
     expect(made).toMatch('by xDevel')
   })
