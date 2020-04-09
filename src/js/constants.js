@@ -6,7 +6,7 @@ export default {
     errorContact: 'Erro inesperado ao enviar, por favor entre em contato por email ou tente novamente mais tarde.'
   },
   apiUrl: {
-    default: 'https://formspree.io/xrgakypw',
+    default: 'https://getform.io/f/9f92a7ed-9106-4705-882a-9c25531ca08b',
     test: '/contact-submit'
   },
   formValidations: {
