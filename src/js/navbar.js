@@ -78,4 +78,9 @@ export const setupNavbar = () => {
   }
   window.document.addEventListener('scroll', () => raf(setTabActive))
   setTabActive()
+
+  if (window.location.hash) {
+    const target = window.document.getElementById(window.location.hash.substr(1)).offsetTop - 70
+    scrollTo(target, 400)
+  }
 }
