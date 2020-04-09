@@ -6,19 +6,23 @@
   "scripts": {
     "start": "webpack-dashboard -- webpack-dev-server --open --config=config/webpack.dev.js",
     "build": "webpack --config=config/webpack.prod.js",
+    "postbuild": "./post-build.sh",
     "format": "prettier --write src/**/*.js",
     "lint": "eslint -c .eslintrc.js --fix src/**/*.js",
     "test:server": "node __tests__/setup-test.js",
-    "test": "jest --detectOpenHandles --forceExit"
+    "test": "cross-env NODE_ENV=test jest --detectOpenHandles --forceExit",
+    "test:ci": "cross-env NODE_ENV=test jest --runInBand --forceExit"
   },
   "devDependencies": {
     "@babel/core": "^7.9.0",
+    "@babel/polyfill": "^7.8.7",
     "@babel/preset-env": "^7.9.5",
     "@commitlint/cli": "^8.3.5",
     "@commitlint/config-conventional": "^8.3.4",
-    "babel-jest": "^25.2.6",
+    "babel-jest": "^25.3.0",
     "babel-loader": "^8.1.0",
     "clean-webpack-plugin": "^3.0.0",
+    "cross-env": "^7.0.2",
     "css-loader": "^3.4.2",
     "eslint": "^6.8.0",
     "eslint-config-standard": "^14.1.1",
@@ -48,8 +52,7 @@
     "webpack-dev-server": "^3.10.3"
   },
   "dependencies": {
-    "@yaireo/validator": "^3.3.5",
-    "core-js": "^3.6.4"
+    "@yaireo/validator": "^3.3.5"
   },
   "engines": {
     "node": "^12.16.1",
