@@ -107,6 +107,11 @@ describe('Index', () => {
     await timeout(200)
     expect(await getFirstAlert()).toBeNull()
 
+    await sendButton.click({ delay: 100 })
+    await timeout(800)
+    const messageSuccess = await form.$('.messages .alert-box p')
+    expect(await messageSuccess.evaluate(node => node.textContent)).toBe('Obrigado por entrar em contato! Em breve enviaremos um retorno.')
+
     const socialMedias = ['twitter', 'instagram', 'github', 'facebook']
     const socialMediaLinks = await contact.$$('.social-medias a')
     for (const link of socialMediaLinks) {

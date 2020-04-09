@@ -28,6 +28,14 @@ const index = Math.max(
 const port = index !== -1 ? +process.argv[index + 1] : 4444
 
 const app = express()
+  .use(express.json())
+  .post('/submit-contact', (req, res) => {
+    const { name, email, message } = req.body
+    if (!name || !email || !message) {
+      return res.status(400).json({ ok: false })
+    }
+    return res.json({ ok: true })
+  })
   .use(middleware(compiler, { serverSideRender: true }))
   .use((req, res) => {
     const webpackJson = res.locals.webpackStats.toJson()
