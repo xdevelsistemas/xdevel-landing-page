@@ -14,18 +14,6 @@ describe('Index', () => {
   describe('common tests', commonTests)
 
   describe('header', () => {
-    test('brand click', async () => {
-      const header = await page.$('header.navigation')
-      const brandLink = await header.$('.container .brand a')
-
-      expect(await brandLink.evaluate(node => node.getAttribute('href'))).toBe('#')
-      brandLink.click()
-      await timeout(400)
-      await Promise.all((await header.$$('li a')).map(async nav => {
-        expect(await nav.evaluate(node => node.classList.contains('active'))).toBe(false)
-      }))
-    })
-
     test('menu click', async () => {
       const header = await page.$('header.navigation')
       const navList = await header.$$('li a')
@@ -40,6 +28,17 @@ describe('Index', () => {
         await timeout(450)
         expect(await nav.evaluate(node => node.classList.contains('active'))).toBe(true)
       }
+    })
+    test('brand click', async () => {
+      const header = await page.$('header.navigation')
+      const brandLink = await header.$('.container .brand a')
+
+      expect(await brandLink.evaluate(node => node.getAttribute('href'))).toBe('#')
+      brandLink.click()
+      await timeout(400)
+      await Promise.all((await header.$$('li a')).map(async nav => {
+        expect(await nav.evaluate(node => node.classList.contains('active'))).toBe(false)
+      }))
     })
   })
 
