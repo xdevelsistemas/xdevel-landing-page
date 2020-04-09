@@ -1,0 +1,10 @@
+@mixin animation-fade($name, $from, $to) {
+  @keyframes #{$name} {
+    0% {
+      opacity: $from;
+    }
+    100% {
+      opacity: $to;
+    }
+  }
+}

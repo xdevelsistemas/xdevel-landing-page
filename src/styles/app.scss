@@ -1,9 +1,11 @@
 @import 'variables';
-@import 'global';
-@import 'navbar';
-@import 'form';
-@import 'footer';
+@import 'mixins';
 @import 'icons';
+@import 'global';
+@import 'dialog-box';
+@import 'navbar';
+@import 'footer';
+@import 'form';
 
 $horizontal-padding: 5%;
 
@@ -259,6 +261,13 @@ section {
     .col {
       width: 50%;
       justify-content: space-around;
+    }
+  }
+
+  &#contact {
+    .email {
+      text-align: center;
+      padding: 10px 0 25px 0;
     }
   }
 

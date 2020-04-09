@@ -1,0 +1,56 @@
+.alert-box {
+  @include animation-fade(fadeIn, 0, 1);
+  @include animation-fade(fadeOut, 1, 0);
+
+  display: flex;
+  padding: 20px;
+  background-color: $SECONDARY_COLOR;
+  color: $TEXT_COLOR;
+  font-size: 1.1rem;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 20px;
+  font-weight: 400;
+
+  &.fade-in {
+    animation: fadeIn ease 1.5s;
+    -webkit-animation: fadeIn ease 1.5s;
+    -moz-animation: fadeIn ease 1.5s;
+    -o-animation: fadeIn ease 1.5s;
+    -ms-animation: fadeIn ease 1.5s;
+  }
+
+  &.fade-out {
+    animation: fadeOut ease 1s;
+    -webkit-animation: fadeOut ease 1s;
+    -moz-animation: fadeOut ease 1s;
+    -o-animation: fadeOut ease 1s;
+    -ms-animation: fadeOut ease 1s;
+  }
+
+  &.hidden {
+    transform: translate(9999px);
+  }
+
+  &.error {
+    background-color: $DANGER_COLOR;
+  }
+
+  &.success {
+    background-color: $SUCCESS_COLOR;
+  }
+
+  span.close-button {
+    display: inline-flex;
+    padding-left: 15px;
+    cursor: pointer;
+  }
+
+  span.close-button:after {
+    content: '\2716';
+  }
+
+  span.close-button:hover {
+    color: darken($TEXT_COLOR, 10%);
+  }
+}

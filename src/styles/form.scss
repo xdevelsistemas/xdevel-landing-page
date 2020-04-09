@@ -1,7 +1,6 @@
 form {
   display: flex;
   flex-direction: column;
-  margin: 0 0 50px 0;
   width: 100%;
   max-width: 650px;
   .group {
@@ -66,9 +65,18 @@ form {
     -webkit-transition: all 0.3s;
     transition: all 0.3s;
 
+    &.disabled {
+      cursor: not-allowed;
+      background-color: lighten($SUCCESS_COLOR, 20%);
+    }
+
     &:hover {
       background-color: darken($SUCCESS_COLOR, 10%);
       color: rgb(0, 0, 0);
+    }
+
+    &.disabled:hover {
+      background-color: lighten($SUCCESS_COLOR, 20%);
     }
   }
 }
