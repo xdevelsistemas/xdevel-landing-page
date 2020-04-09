@@ -7,8 +7,6 @@ faker.locale = 'pt_BR'
 describe('Index', () => {
   beforeAll(async () => {
     jest.setTimeout(100000)
-  })
-  beforeEach(async () => {
     await page.goto(PATH, { waitUntil: 'load' })
     await timeout(1000)
   })
@@ -95,6 +93,7 @@ describe('Index', () => {
     const emailAlert = await getFirstAlert()
     expect(await emailAlert.evaluate(node => node.textContent.toLowerCase())).toBe('e-mail inválido!') // é preciso escrever um pouco mais!
     const emailFaker = faker.internet.email()
+    await email.evaluate(node => { node.value = '' })
     await email.type(emailFaker, { delay: 50 })
     await timeout(200)
     expect(await (await getFirstAlert()).evaluate(node => node.textContent.toLowerCase())).not.toBe('e-mail inválido!')
@@ -103,7 +102,8 @@ describe('Index', () => {
     const messageAlertText = 'é preciso escrever um pouco mais!'
     expect(await messageAlert.evaluate(node => node.textContent.toLowerCase())).toBe(messageAlertText)
     const phrase = faker.hacker.phrase()
-    await message.type(phrase, { delay: 50 })
+    await message.evaluate(node => { node.value = '' })
+    await message.type(phrase, { delay: 10 })
     await timeout(200)
     expect(await getFirstAlert()).toBeNull()
 

@@ -4,8 +4,6 @@ const commonTests = require('./common-tests')
 describe('404', () => {
   beforeAll(async () => {
     jest.setTimeout(100000)
-  })
-  beforeEach(async () => {
     await page.goto(`${PATH}/404.html`, { waitUntil: 'load' })
     await timeout(1000)
   })
