@@ -1,9 +1,8 @@
 jobs:
   build:
+    docker:
+      - image: circleci/node:12-browsers
     working_directory: ~/app
-    executor:
-      name: node/default
-      tag: '12.16.1'
     steps:
       - run: sudo apt-get update
       - run: sudo apt-get install -y tzdata
