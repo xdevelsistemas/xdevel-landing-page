@@ -15,11 +15,11 @@ tempFile=$tempDirectory/index.html
 
 mkdir -p $tempDirectory
 touch $tempFile
-less $commentFile >> $tempFile
-less $indexFile >> $tempFile
+cat $commentFile >> $tempFile
+cat $indexFile >> $tempFile
 cp $tempFile $indexFile
-less $commentFile > $tempFile
-less $file404 >> $tempFile
+cat $commentFile > $tempFile
+cat $file404 >> $tempFile
 cp $tempFile $file404
 
 yarn -s rimraf $tempDirectory
