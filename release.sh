@@ -5,6 +5,7 @@ git pull &&
 echo "Instalando dependências" &&
 yarn install &&
 echo "Executando testes" &&
+yarn lint &&
 yarn test &&
 echo "Obtendo versão e changelog" &&
 cp package.json _package.json &&
