@@ -1,6 +1,6 @@
 # xDevel Landing Page
 
-The first original website of xDevel.
+The first landing page of xDevel.
 
 ---
 
@@ -19,7 +19,7 @@ The first original website of xDevel.
 
 - [Webpack](https://webpack.js.org/)
 - [Sass](https://sass-lang.com/)
-- Pure Javascript: No frameworks and libraries
+- Pure Javascript: No frameworks and big libraries
 
 ## Deployment
 
@@ -28,7 +28,7 @@ To publish just run the build script: `yarn build` and all contents of the `dist
 ## Authors
 
 - [**David Vilaça**](https://github.com/davidpvilaca)
-- [**claytonsilva**](https://github.com/claytonsilva)
+- [**Clayton Silva**](https://github.com/claytonsilva)
 
 [![xDevel](.github/xdevel.svg)](https://www.xdevel.com.br)
 
@@ -36,4 +36,4 @@ Created and maintained by xDevel® 2020
 
 ## License
 
-Not implemented.
+[MIT](LICENSE)
