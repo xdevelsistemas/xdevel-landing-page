@@ -25,4 +25,4 @@ npm version ${1:-$bump} -m "chore(release): v%s" &&
 yarn rimraf package-lock.json &&
 git push --follow-tags &&
 echo "Github Release" &&
-conventional-github-releaser -p ${2:-$preset}
+yarn conventional-github-releaser -p ${2:-$preset}
