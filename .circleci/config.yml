@@ -27,8 +27,6 @@ jobs:
       - run:
           name: All tests
           command: yarn test:ci
-      - store_test_results:
-          path: tests-result
       - run:
           name: Build
           command: yarn build
@@ -42,6 +40,7 @@ jobs:
     steps:
       - attach_workspace:
           at: ~/app/
+      - aws-cli/install
       - run:
           name: AWS version
           command: aws --version
