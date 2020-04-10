@@ -25,7 +25,6 @@ jobs:
       - run:
           name: All tests
           command: yarn test:ci
-      - coveralls/upload
       - store_test_results:
           path: tests-result
       - run:
@@ -55,7 +54,6 @@ jobs:
 
 orbs:
   node: circleci/node@2.0.1
-  coveralls: coveralls/coveralls@1.0.4
   aws-cli: circleci/aws-cli@1.0.0
 version: 2.1
 workflows:
