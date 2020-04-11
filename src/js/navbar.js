@@ -80,8 +80,12 @@ export const setupNavbar = () => {
   window.document.addEventListener('scroll', () => raf(setTabActive))
   setTabActive()
 
-  if (window.location.hash) {
-    const target = window.document.getElementById(window.location.hash.substr(1)).offsetTop - 70
+  const validIds = [...window.document.querySelectorAll('section')]
+    .map(section => section.getAttribute('id'))
+    .filter(id => id.length > 0)
+  const atualHash = window.location.hash.replace('#', '')
+  if (atualHash && validIds.indexOf(atualHash) !== -1) {
+    const target = window.document.getElementById(atualHash).offsetTop - 70
     scrollTo(target, 400)
   }
 }
