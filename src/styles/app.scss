@@ -262,10 +262,6 @@ section {
   &#about {
     flex-direction: row;
     align-items: flex-start;
-    .col {
-      width: 50%;
-      justify-content: space-around;
-    }
   }
 
   &#contact {
@@ -281,7 +277,8 @@ section {
     }
 
     .content {
-      &.right {
+      &.right,
+      &.left {
         padding-left: 0;
       }
 
