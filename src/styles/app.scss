@@ -286,5 +286,11 @@ section {
         flex-direction: column;
       }
     }
+
+    &#contact {
+      .email {
+        padding: 25px 0;
+      }
+    }
   }
 }
