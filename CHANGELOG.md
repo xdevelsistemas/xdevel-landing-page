@@ -1,3 +1,15 @@
+## [1.0.1](https://github.com/xdevelsistemas/xdevel-landing-page/compare/v1.0.0...v1.0.1) (2020-04-11)
+
+
+### Bug Fixes
+
+* **footer:** mobile padding ([2d4ec65](https://github.com/xdevelsistemas/xdevel-landing-page/commit/2d4ec65a979e2ad17a2f2cb5352e0d7b5717a35c))
+* about section on mobile ([60174f8](https://github.com/xdevelsistemas/xdevel-landing-page/commit/60174f8782b7e064a4836bfb470c97951ecbcfe3))
+* contact email on mobile ([4d06808](https://github.com/xdevelsistemas/xdevel-landing-page/commit/4d06808d2aa77e365619dad5214df874cac16bac))
+* open page with invalid target hash ([d60a05b](https://github.com/xdevelsistemas/xdevel-landing-page/commit/d60a05bc62378a24e4fca62b5a8832500f7b605c))
+
+
+
 # 1.0.0 (2020-04-10)
 
 
