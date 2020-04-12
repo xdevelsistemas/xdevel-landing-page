@@ -3,6 +3,13 @@ form {
   flex-direction: column;
   width: 100%;
   max-width: 650px;
+
+  .center {
+    justify-content: center;
+    align-items: center;
+    text-align: center
+  }
+
   .group {
     display: flex;
     flex-direction: column;
@@ -51,7 +58,7 @@ form {
   }
   button[type='submit'] {
     color: #1c1c1c;
-    margin-top: 15px;
+    margin: 15px 0;
     padding: 15px;
 
     width: 100%;
