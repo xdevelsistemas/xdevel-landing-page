@@ -7,6 +7,8 @@ The first landing page of xDevel.
 [![js-standard-style](https://img.shields.io/badge/code%20style-standard-brightgreen.svg)](http://standardjs.com)
 [![Commitizen friendly](https://img.shields.io/badge/commitizen-friendly-brightgreen.svg)](http://commitizen.github.io/cz-cli/)
 [![CircleCI](https://circleci.com/gh/xdevelsistemas/xdevel-landing-page.svg?style=svg)](https://circleci.com/gh/xdevelsistemas/xdevel-landing-page)
+[![dependencies Status](https://david-dm.org/xdevelsistemas/xdevel-landing-page/status.svg)](https://david-dm.org/xdevelsistemas/xdevel-landing-page)
+[![devDependencies Status](https://david-dm.org/xdevelsistemas/xdevel-landing-page/dev-status.svg)](https://david-dm.org/xdevelsistemas/xdevel-landing-page?type=dev)
 
 ---
 
