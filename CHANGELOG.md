@@ -1,3 +1,13 @@
+## [1.0.3](https://github.com/xdevelsistemas/xdevel-landing-page/compare/v1.0.2...v1.0.3) (2020-04-13)
+
+
+### Bug Fixes
+
+* links rel and href ([a272dbf](https://github.com/xdevelsistemas/xdevel-landing-page/commit/a272dbf3e1cf0f39659f3ee60aac9b8cc621d95a))
+* spelling and syntactic corrections ([9314050](https://github.com/xdevelsistemas/xdevel-landing-page/commit/9314050b594024bbe5a6255b6b18ecc091ea538b))
+
+
+
 ## [1.0.2](https://github.com/xdevelsistemas/xdevel-landing-page/compare/v1.0.1...v1.0.2) (2020-04-13)
 
 
