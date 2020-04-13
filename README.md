@@ -9,12 +9,14 @@ The first landing page of xDevel.
 [![CircleCI](https://circleci.com/gh/xdevelsistemas/xdevel-landing-page.svg?style=svg)](https://circleci.com/gh/xdevelsistemas/xdevel-landing-page)
 [![dependencies Status](https://david-dm.org/xdevelsistemas/xdevel-landing-page/status.svg)](https://david-dm.org/xdevelsistemas/xdevel-landing-page)
 [![devDependencies Status](https://david-dm.org/xdevelsistemas/xdevel-landing-page/dev-status.svg)](https://david-dm.org/xdevelsistemas/xdevel-landing-page?type=dev)
+[![GitHub license](https://img.shields.io/github/license/xdevelsistemas/xdevel-landing-page)](https://github.com/xdevelsistemas/xdevel-landing-page/blob/master/LICENSE)
+[![website status](https://img.shields.io/website?down_color=red&down_message=down&logo=xdevel&logoColor=blue&up_color=green&up_message=up&url=http%3A%2F%2Fxdevel.com.br)](http://www.xdevel.com.br)
 
 ---
 
 ## Getting Started
 
-1. If not use [asd version manager](https://github.com/asdf-vm/asdf), setup your node version ^12.16.1
+1. If you don't use [asd version manager](https://github.com/asdf-vm/asdf), setup your node version ^12.16.1
 2. Install dependencies with Yarn: `yarn install`
 3. Start dev server: `yarn start`
 
