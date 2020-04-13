@@ -1,3 +1,14 @@
+## [1.0.2](https://github.com/xdevelsistemas/xdevel-landing-page/compare/v1.0.1...v1.0.2) (2020-04-13)
+
+
+### Bug Fixes
+
+* **footer:** height on mobile ([887773f](https://github.com/xdevelsistemas/xdevel-landing-page/commit/887773fefff02e153b5b4d5db5852374a292ba1e))
+* small logo size ([8d23c04](https://github.com/xdevelsistemas/xdevel-landing-page/commit/8d23c04783aca4ec4ca87dc7fdf11d83548b55f8))
+* **contact:** centralize submit button ([692c6a0](https://github.com/xdevelsistemas/xdevel-landing-page/commit/692c6a07f1fdad1e0e5a4fe49bb4d0805d8349c4))
+
+
+
 ## [1.0.1](https://github.com/xdevelsistemas/xdevel-landing-page/compare/v1.0.0...v1.0.1) (2020-04-11)
 
 
