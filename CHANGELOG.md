@@ -1,3 +1,17 @@
+# [1.1.0](https://github.com/xdevelsistemas/xdevel-landing-page/compare/v1.0.3...v1.1.0) (2020-04-16)
+
+
+### Bug Fixes
+
+* nav toggle click scroll top ([23f4539](https://github.com/xdevelsistemas/xdevel-landing-page/commit/23f45398f1c5c8b04a02449a50983d42275240d4))
+
+
+### Features
+
+* **alert:** add timeout support ([b6a5369](https://github.com/xdevelsistemas/xdevel-landing-page/commit/b6a536963e96dea5f1458e519f09bc481faa394a))
+
+
+
 ## [1.0.3](https://github.com/xdevelsistemas/xdevel-landing-page/compare/v1.0.2...v1.0.3) (2020-04-13)
 
 
