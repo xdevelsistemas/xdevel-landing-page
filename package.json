@@ -68,11 +68,14 @@
     "@yaireo/validator": "^3.3.5"
   },
   "engines": {
-    "node": "^12.16.2",
+    "node": "^12.19.0",
     "yarn": "^1.20.0"
   },
   "resolutions": {
-    "eslint-plugin-standard": "^4.0.0"
+    "dot-prop": ">=4.2.1 <5.0.0 || >=5.1.1",
+    "eslint-plugin-standard": "^4.0.0",
+    "lodash": ">=4.17.19",
+    "yargs-parser": ">=13.1.2 <14.0.0 || >=15.0.1 <16.0.0 || >=18.1.2"
   },
   "lint-staged": {
     "src/**/*.js": [
@@ -84,7 +87,7 @@
   },
   "husky": {
     "hooks": {
-      "commit-msg": "commitlint -e",
+      "commit-msg": "commitlint -E HUSKY_GIT_PARAMS",
       "pre-commit": "lint-staged"
     }
   },
