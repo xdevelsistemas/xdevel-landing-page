@@ -1,3 +1,12 @@
+## [1.1.1](https://github.com/xdevelsistemas/xdevel-landing-page/compare/v1.1.0...v1.1.1) (2020-10-18)
+
+
+### Bug Fixes
+
+* **social-medias:** rm instagram link ([84f2f1f](https://github.com/xdevelsistemas/xdevel-landing-page/commit/84f2f1f803dfe8c14782882db6e702d6f9add4b8))
+
+
+
 # [1.1.0](https://github.com/xdevelsistemas/xdevel-landing-page/compare/v1.0.3...v1.1.0) (2020-04-16)
 
 
