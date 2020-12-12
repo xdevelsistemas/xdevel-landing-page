@@ -1,3 +1,12 @@
+## [1.1.2](https://github.com/xdevelsistemas/xdevel-landing-page/compare/v1.1.1...v1.1.2) (2020-12-12)
+
+
+### Bug Fixes
+
+* decrease h3 margin ([3eed209](https://github.com/xdevelsistemas/xdevel-landing-page/commit/3eed20991c4e2b2cb729046b605adfa12d763ccc))
+
+
+
 ## [1.1.1](https://github.com/xdevelsistemas/xdevel-landing-page/compare/v1.1.0...v1.1.1) (2020-10-18)
 
 
