@@ -68,8 +68,8 @@
     "@yaireo/validator": "^3.3.5"
   },
   "engines": {
-    "node": "^12.19.0",
-    "yarn": "^1.20.0"
+    "node": "^14.15.1",
+    "yarn": "^1.22.0"
   },
   "resolutions": {
     "dot-prop": ">=4.2.1 <5.0.0 || >=5.1.1",

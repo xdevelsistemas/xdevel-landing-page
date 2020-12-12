@@ -16,7 +16,7 @@ The first landing page of xDevel.
 
 ## Getting Started
 
-1. If you don't use [asd version manager](https://github.com/asdf-vm/asdf), setup your node version ^12.16.1
+1. If you don't use [asd version manager](https://github.com/asdf-vm/asdf), setup your node version ^14.15.1
 2. Install dependencies with Yarn: `yarn install`
 3. Start dev server: `yarn start`
 
